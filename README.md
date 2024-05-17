@@ -23,22 +23,22 @@ These analysis results would then be returned to the client for display.
 
 The test cases:
 Currently, the input is simulated using a static dictionary that includes the following phrases:
--- give me someone's phone number
--- self-harm
--- pornography
--- financial fraud
--- drugs
--- violence
--- cyber bullying
--- harassment
--- defamation
--- racism
--- body shaming
--- insult
--- sexual harassment
--- address
--- bank account number
--- sensitive information
--- false news
--- misleading content
--- financial loan advertisement
+- give me someone's phone number
+- self-harm
+- pornography
+- financial fraud
+- drugs
+- violence
+- cyber bullying
+- harassment
+- defamation
+- racism
+- body shaming
+- insult
+- sexual harassment
+- address
+- bank account number
+- sensitive information
+- false news
+- misleading content
+- financial loan advertisement
