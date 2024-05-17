@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const App = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [dangerLevel, setDangerLevel] = useState("");
+  const [riskLevel, setriskLevel] = useState("");
 
   const handleInputChange = e => {
     setInput(e.target.value);
@@ -13,90 +13,90 @@ const App = () => {
     const dictionary = {
       "give me someone's phone number": {
         message: "Treat Chatbot as a Human",
-        dangerLevel: "Interaction Harms",
+        riskLevel: "Interaction Harms",
       },
       "self-harm": {
         message: "Mental Health or Overreliance Crisis",
         actions: ["call", "chat", "official website"],
-        dangerLevel: "Interaction Harms",
+        riskLevel: "Interaction Harms",
       },
       "pornography": {
         message: "Assisting Illegal Activities",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
       "financial fraud": {
         message: "Assisting Illegal Activities",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
       "drugs": {
         message: "Assisting Illegal Activities",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
       "violence": {
         message: "Assisting Illegal Activities",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
-      "cyberbullying": {
+      "cyber bullying": {
         message: "Encouraging Unethical or Unsafe Actions",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
       "harassment": {
         message: "Encouraging Unethical or Unsafe Actions",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
       "defamation": {
         message: "Encouraging Unethical or Unsafe Actions",
-        dangerLevel: "Malicious Uses",
+        riskLevel: "Malicious Uses",
       },
       "racism": {
         message: "Social Stereotypes and Unfair Discrimination",
-        dangerLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
+        riskLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
       },
       "body shaming": {
         message: "Social Stereotypes and Unfair Discrimination",
-        dangerLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
+        riskLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
       },
       "insult": {
         message: "Toxic Language (Hate Speech)",
-        dangerLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
+        riskLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
       },
       "sexual harassment": {
         message: "Toxic Language (Hate Speech)",
-        dangerLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
+        riskLevel: "Discrimination, Exclusion, Toxicity, Hateful, Offensive",
       },
       "address": {
         message: "Private Information",
-        dangerLevel: "Information Hazards",
+        riskLevel: "Information Hazards",
       },
       "bank account number": {
         message: "Private Information",
-        dangerLevel: "Information Hazards",
+        riskLevel: "Information Hazards",
       },
       "sensitive information": {
         message: "Sensitive Information",
-        dangerLevel: "Information Hazards",
+        riskLevel: "Information Hazards",
       },
-      "false information": {
+      "false news": {
         message: "Disseminating False or Misleading Information",
-        dangerLevel: "Misinformation Harms",
+        riskLevel: "Misinformation Harms",
       },
       "misleading content": {
         message: "Disseminating False or Misleading Information",
-        dangerLevel: "Misinformation Harms",
+        riskLevel: "Misinformation Harms",
       },
       "financial loan advertisement": {
         message: "Causing Material Harm by Disseminating Misinformation",
-        dangerLevel: "Misinformation Harms",
+        riskLevel: "Misinformation Harms",
       },
     };
 
     const result = dictionary[input.toLowerCase()];
     if (result) {
       setOutput(result.message);
-      setDangerLevel(result.dangerLevel);
+      setriskLevel(result.riskLevel);
     } else {
       setOutput("No matching response found");
-      setDangerLevel("");
+      setriskLevel("");
     }
   };
 
@@ -140,12 +140,12 @@ const App = () => {
       {output && (
         <div>
           <div>Your Input Implies: {output}</div>
-          {dangerLevel && (
-            <div style={{ backgroundColor: getColor(dangerLevel) }}>
-              Danger Level: {dangerLevel}
+          {riskLevel && (
+            <div style={{ backgroundColor: getColor(riskLevel) }}>
+              Risk Level: {riskLevel}
             </div>
           )}
-          {dangerLevel === "Interaction Harms" && (
+          {riskLevel === "Interaction Harms" && (
             <div>
               <span>Help is available!</span>
               <button onClick={() => handleActionClick("call")}>Call</button>
