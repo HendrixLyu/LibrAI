@@ -9,6 +9,12 @@ npm install
 npm start
 ```
 
+**The UI page can be visited by:**
+
+
+```bash
+https://localhost:3000/
+```
 
 
 This small UI demonstrates the functionality of displaying basic risk levels based on user input. 
